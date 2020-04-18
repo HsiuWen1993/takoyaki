@@ -1,4 +1,4 @@
-package team.takoyaki.product.po;
+package team.takoyaki.repos.po;
 
 import java.io.Serializable;
 
