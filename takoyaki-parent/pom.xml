@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>team.takoyaki</groupId>
+	<artifactId>takoyaki-parent-lib</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>takoyaki-parent-lib</name>
+
+	<properties>
+		<java.version>11</java.version>
+
+		<!-- Spring Boot Dependencies -->
+		<spring-boot-dependencies.version>2.1.5.RELEASE</spring-boot-dependencies.version>
+
+		<!-- SLF4J API -->
+		<slf4j-api.version>1.7.26</slf4j-api.version>
+
+		<!-- JUnit -->
+		<junit.version>4.12</junit.version>
+
+		<!-- junit 5 -->
+		<junit-jupiter.version>5.3.2</junit-jupiter.version>
+
+		<!-- Swagger -->
+		<swagger.version>2.9.2</swagger.version>
+		<swagger-bootstrap-ui.version>1.9.5</swagger-bootstrap-ui.version>
+
+		<!-- SQL Servce Drive -->
+		<com.microsoft.sqlserver.version>4.0</com.microsoft.sqlserver.version>
+
+		<!-- Coding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Lombok API -->
+		<lombok.version>1.18.8</lombok.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-dependencies</artifactId>
+			<version>${spring-boot-dependencies.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-api.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot-dependencies.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<encoding>utf-8</encoding>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

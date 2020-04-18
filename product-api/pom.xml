@@ -6,39 +6,51 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.6.RELEASE</version>
+		<version>2.1.9.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.takoyaki</groupId>
-	<artifactId>product-api</artifactId>
+	<groupId>team.takoyaki</groupId>
+	<artifactId>takoyaki-web-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>product</name>
 	<description>kakami no takoyaki</description>
 
 	<properties>
 		<java.version>11</java.version>
+		<spring-fox-version>2.9.2</spring-fox-version>
+		<lastVersion>1.9.6</lastVersion>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.takoyaki</groupId>
-			<artifactId>product-service</artifactId>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>swagger-bootstrap-ui</artifactId>
+			<version>${lastVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>team.takoyaki</groupId>
+			<artifactId>takoyaki-web-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.9.2</version>
+			<version>${spring-fox-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>2.9.2</version>
+			<version>${spring-fox-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-data-rest</artifactId>
-			<version>2.9.2</version>
+			<version>${spring-fox-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.plugin</groupId>
+			<artifactId>spring-plugin-core</artifactId>
+			<version>2.0.0.RELEASE</version>
 		</dependency>
 
 		<dependency>
