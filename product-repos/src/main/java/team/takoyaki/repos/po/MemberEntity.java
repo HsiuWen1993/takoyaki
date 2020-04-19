@@ -20,7 +20,7 @@ public class MemberEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "MEMBER_UID")
 	private Long memberUid;
 
@@ -41,12 +41,29 @@ public class MemberEntity implements Serializable {
 
 	@Column(name = "EMAIL")
 	@Pattern(regexp = "^\\w{1,63}@[a-zA-Z0-9]{2,63}\\.[a-zA-Z]{2,63}(\\.[a-zA-Z]{2,63})?$")
+	@NotEmpty
 	private String email;
 
 	@Column(name = "PASSWORD")
 	@NotEmpty
 	private String password;
 
+	@Column(name = "MEMBER_LEVEL")
+	@NotEmpty
+	private String memberLevel;
+
+	@Column(name = "MEMBER_TYPE")
+	@NotEmpty
+	private String memberType;
+
+	@Column(name = "JOIN_DATETIME")
+	@NotEmpty
+	private String joinDatetime;
+
+	@Column(name = "UPDATE_DATETIME")
+	@NotEmpty
+	private String updateDatetime;
+	
 	@Column(name = "COUNTRY")
 	private String country;
 
@@ -84,21 +101,7 @@ public class MemberEntity implements Serializable {
 	private String number;
 
 	@Column(name = "FLOOR")
-	private String floor;
+	private Integer floor;
 
-	@Column(name = "MEMBER_LEVEL")
-	@NotEmpty
-	private String memberLevel;
 
-	@Column(name = "MEMBER_TYPE")
-	@NotEmpty
-	private String memberType;
-
-	@Column(name = "JOIN_DATETIME")
-	@NotEmpty
-	private String joinDatetime;
-
-	@Column(name = "UPDATE_DATETIME")
-	@NotEmpty
-	private String updateDatetime;
 }
