@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import team.takoyaki.product.service.MemberService;
-import team.takoyaki.product.vo.ApplyMemberReq;
-import team.takoyaki.product.vo.ApplyMemberResp;
-import team.takoyaki.product.vo.MemberInfoModifyReq;
-import team.takoyaki.product.vo.MemberInfoModifyResp;
+import team.takoyaki.service.MemberService;
+import team.takoyaki.vo.ApplyMemberReq;
+import team.takoyaki.vo.ApplyMemberResp;
+import team.takoyaki.vo.MemberInfoModifyReq;
+import team.takoyaki.vo.MemberInfoModifyResp;
 
 //@Api(tags = "Member")
 @RestController

@@ -1,4 +1,4 @@
-package team.takoyaki.product;
+package team.takoyaki;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

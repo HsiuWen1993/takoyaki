@@ -1,12 +1,12 @@
-package team.takoyaki.product;
+package team.takoyaki.service;
 
 import org.springframework.stereotype.Service;
 
-import team.takoyaki.product.service.MemberService;
-import team.takoyaki.product.vo.ApplyMemberReq;
-import team.takoyaki.product.vo.ApplyMemberResp;
-import team.takoyaki.product.vo.MemberInfoModifyReq;
-import team.takoyaki.product.vo.MemberInfoModifyResp;
+import team.takoyaki.service.MemberService;
+import team.takoyaki.vo.ApplyMemberReq;
+import team.takoyaki.vo.ApplyMemberResp;
+import team.takoyaki.vo.MemberInfoModifyReq;
+import team.takoyaki.vo.MemberInfoModifyResp;
 
 @Service
 public class MemberServiceImpl implements MemberService {

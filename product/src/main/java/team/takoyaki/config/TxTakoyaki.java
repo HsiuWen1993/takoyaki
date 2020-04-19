@@ -1,4 +1,4 @@
-package team.takoyaki.product.config;
+package team.takoyaki.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
