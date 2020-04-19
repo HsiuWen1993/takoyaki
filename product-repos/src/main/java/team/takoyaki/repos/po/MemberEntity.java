@@ -1,6 +1,7 @@
 package team.takoyaki.repos.po;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import lombok.Data;
@@ -25,15 +26,14 @@ public class MemberEntity implements Serializable {
 	private Long memberUid;
 
 	@Column(name = "NAME")
-	@NotEmpty
+	@NotNull
 	private String name;
 
 	@Column(name = "NICKNAME")
 	private String nickname;
 
 	@Column(name = "MOBILE_PHONE")
-	@Pattern(regexp = "/^09\\d{8}$/")
-	@NotEmpty
+	@NotNull
 	private String mobilePhone;
 
 	@Column(name = "TELEPHONE")
@@ -41,29 +41,29 @@ public class MemberEntity implements Serializable {
 
 	@Column(name = "EMAIL")
 	@Pattern(regexp = "^\\w{1,63}@[a-zA-Z0-9]{2,63}\\.[a-zA-Z]{2,63}(\\.[a-zA-Z]{2,63})?$")
-	@NotEmpty
+	@NotNull
 	private String email;
 
 	@Column(name = "PASSWORD")
-	@NotEmpty
+	@NotNull
 	private String password;
 
 	@Column(name = "MEMBER_LEVEL")
-	@NotEmpty
+	@NotNull
 	private String memberLevel;
 
 	@Column(name = "MEMBER_TYPE")
-	@NotEmpty
+	@NotNull
 	private String memberType;
 
 	@Column(name = "JOIN_DATETIME")
-	@NotEmpty
-	private String joinDatetime;
+	@NotNull
+	private Timestamp joinDatetime;
 
 	@Column(name = "UPDATE_DATETIME")
-	@NotEmpty
-	private String updateDatetime;
-	
+	@NotNull
+	private Timestamp updateDatetime;
+
 	@Column(name = "COUNTRY")
 	private String country;
 
@@ -102,6 +102,5 @@ public class MemberEntity implements Serializable {
 
 	@Column(name = "FLOOR")
 	private Integer floor;
-
 
 }
