@@ -17,8 +17,8 @@ import lombok.Data;
 @Entity
 @Table(name = "TAKOYAKI_MEMBER_LOGIN_INFO")
 @Data
-public class MemberLoginInfoEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class SuggestionCardEntity implements Serializable{
+private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,11 +28,26 @@ public class MemberLoginInfoEntity implements Serializable {
 	@NotNull
 	private Long memberUid;
 	
-	@Column(name = "IP")
+	@Column(name = "TYPE")
 	@NotNull
 	private String ip;
 
-	@Column(name = "LOGIN_DATETIME")
+	@Column(name = "QUESTION_CONTENT")
 	@NotNull
-	private Timestamp localDateTime ;
+	private String questionContent;
+	
+	@Column(name = "RESPONSE_CONTENT")
+	private String responseContent;
+	
+	@Column(name = "QUESTION_DATETIME")
+	@NotNull
+	private Timestamp questionDateTime;
+	
+	@Column(name = "RESPONSE_DATETIME")
+	private Timestamp ResponseDateTime;
+	
+	@Column(name = "STATUS")
+	@NotNull
+	private char status;
+	
 }
