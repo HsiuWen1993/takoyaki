@@ -15,24 +15,40 @@ import javax.validation.constraints.Pattern;
 import lombok.Data;
 
 @Entity
-@Table(name = "TAKOYAKI_MEMBER_LOGIN_INFO")
+@Table(name = "TAKOYAKI_PRODUCT")
 @Data
-public class MemberLoginInfoEntity implements Serializable {
+public class ProductEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "MEMBER_UID")
+	@Column(name ="PRODUCT_UID")
 	@NotNull
-	private Long memberUid;
+	private Long productUid;
 	
-	@Column(name = "IP")
+	@Column(name ="NAME")
 	@NotNull
-	private String ip;
-
-	@Column(name = "LOGIN_DATETIME")
+	private String name;
+	
+	@Column(name ="BRAND")
 	@NotNull
-	private Timestamp localDateTime ;
+	private String brand;
+	
+	@Column(name ="PRICE")
+	@NotNull
+	private Integer price;
+	
+	@Column(name ="TYPE")
+	@NotNull
+	private Long type;
+	
+	@Column(name ="INVENTORY")
+	@NotNull
+	private Integer inventory;
+	
+	@Column(name ="INFORMATION")
+	private String information;
+	
 }
