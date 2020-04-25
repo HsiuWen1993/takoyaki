@@ -14,13 +14,13 @@ import team.takoyaki.vo.MemberInfoModifyResp;
 
 //@Api(tags = "Member")
 @RestController
-@RequestMapping(value = "/takoyaki")
-public class ProductController {
+@RequestMapping(value = "/member")
+public class MemberController {
 	@Autowired
 	private MemberService memberService;
 
 	// @ApiOperation(value = "申請會員", notes = "申請會員")
-	@PostMapping(path = "/applyMember")
+	@PostMapping(path = "/apply")
 	public ApplyMemberResp applyMember(// @ApiParam(required = true, value = "會員資料")
 			@RequestBody ApplyMemberReq req) {
 		return memberService.apply(req);
