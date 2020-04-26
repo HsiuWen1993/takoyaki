@@ -37,10 +37,10 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberInfoResp getMemberInfo(String memberUid) {
-		Optional<MemberEntity> memberEntityOptional = repository.findById(Long.valueOf(memberUid));
 		MemberEntity memberEntity = null;
 		try {
-			memberEntity = memberEntityOptional.orElseThrow(() -> new Exception("查無" + memberUid + "的資訊."));
+			memberEntity = repository.findById(Long.valueOf(memberUid))
+					.orElseThrow(() -> new Exception("查無" + memberUid + "的資訊."));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
@@ -93,7 +93,7 @@ public class MemberServiceImpl implements MemberService {
 	 */
 	private MemberInfoResp setMemberInfoResp(MemberEntity memberEntity) {
 		MemberInfoResp memberInfoResp = new MemberInfoResp();
-		//TODO
+		// TODO
 		memberInfoResp.setName(memberEntity.getName());
 		return memberInfoResp;
 	}
