@@ -2,6 +2,7 @@ package team.takoyaki.service;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import team.takoyaki.vo.ApplyMemberReq;
 import team.takoyaki.vo.ApplyMemberResp;
 import team.takoyaki.vo.MemberInfoModifyReq;
 import team.takoyaki.vo.MemberInfoModifyResp;
+import team.takoyaki.vo.MemberInfoResp;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -33,8 +35,21 @@ public class MemberServiceImpl implements MemberService {
 		return null;
 	}
 
+	@Override
+	public MemberInfoResp getMemberInfo(String memberUid) {
+		MemberEntity memberEntity = null;
+		try {
+			memberEntity = repository.findById(Long.valueOf(memberUid))
+					.orElseThrow(() -> new Exception("查無" + memberUid + "的資訊."));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+		}
+
+		return setMemberInfoResp(memberEntity);
+	}
+
 	/**
-	 * 請求轉會員資料Entity
+	 * ApplyMemberReq轉MemberEntity
 	 * 
 	 * @param req
 	 * @return
@@ -68,5 +83,18 @@ public class MemberServiceImpl implements MemberService {
 		memberEntity.setNumber(req.getNumber());
 		memberEntity.setFloor(req.getFloor());
 		return memberEntity;
+	}
+
+	/**
+	 * MemberEntity轉MemberInfoResp
+	 * 
+	 * @param memberEntity
+	 * @return
+	 */
+	private MemberInfoResp setMemberInfoResp(MemberEntity memberEntity) {
+		MemberInfoResp memberInfoResp = new MemberInfoResp();
+		// TODO
+		memberInfoResp.setName(memberEntity.getName());
+		return memberInfoResp;
 	}
 }

@@ -49,5 +49,5 @@ private static final long serialVersionUID = 1L;
 	@Column(name = "STATUS")
 	@NotNull
 	private Character status;
-	
+
 }

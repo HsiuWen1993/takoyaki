@@ -31,4 +31,5 @@ public class ProductSoldEntity implements Serializable {
 	@Column(name = "TOTAL_SOLD")
 	@NotNull
 	private Integer totalSold;
+	
 }

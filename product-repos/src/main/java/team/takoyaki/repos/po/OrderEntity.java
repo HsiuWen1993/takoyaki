@@ -47,4 +47,5 @@ public class OrderEntity implements Serializable{
 	@Column(name = "STATUS")
 	@NotNull
 	private Character status;
+
 }
