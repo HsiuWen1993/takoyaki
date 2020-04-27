@@ -1,7 +1,6 @@
 package team.takoyaki.repos.po;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -16,40 +15,32 @@ import javax.validation.constraints.Pattern;
 import lombok.Data;
 
 @Entity
-@Table(name = "TAKOYAKI_PRODUCT")
+@Table(name = "TAKOYAKI_REEOR_LOG")
 @Data
-public class ProductEntity implements Serializable {
+public class ErrorLogEntity implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name ="PRODUCT_UID")
+	@Column(name = "PROGRAM_NAME")
 	@NotNull
-	private Long productUid;
+	private Long programName;
 	
-	@Column(name ="NAME")
+	@Column(name = "PROGRAM_TYPE")
 	@NotNull
-	private String name;
+	private Long programType;
 	
-	@Column(name ="BRAND")
+	@Column(name = "ERROR_TIME")
 	@NotNull
-	private String brand;
+	private Timestamp errorTime;
 	
-	@Column(name ="PRICE")
+	@Column(name = "ERROR_TYPE")
 	@NotNull
-	private BigDecimal price;
+	private Long errprType;
 	
-	@Column(name ="TYPE")
+	@Column(name = "ERROR_CONTENT")
 	@NotNull
-	private Long type;
-	
-	@Column(name ="INVENTORY")
-	@NotNull
-	private Integer inventory;
-	
-	@Column(name ="INFORMATION")
-	private String information;
-	
+	private Long errorContent;
 }

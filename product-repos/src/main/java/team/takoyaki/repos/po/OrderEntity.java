@@ -1,6 +1,7 @@
 package team.takoyaki.repos.po;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -34,7 +35,7 @@ public class OrderEntity implements Serializable{
 	
 	@Column(name = "TOTAL")
 	@NotNull
-	private Integer total;
+	private BigDecimal total;
 	
 	@Column(name = "AMOUNT")
 	@NotNull
