@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import lombok.Data;
 
 @Data
-public class MemberInfoResp {
+public class MemberInfoResp extends ErrorResp{
 
 	private String name;
 

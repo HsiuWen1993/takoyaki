@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import lombok.Data;
 
 @Data
-public class OrderInquireResp {
+public class OrderInquireResp extends ErrorResp{
 	
 	private Long orderUid;
 	

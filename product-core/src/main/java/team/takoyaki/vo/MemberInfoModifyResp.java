@@ -1,5 +1,5 @@
 package team.takoyaki.vo;
 
-public class MemberInfoModifyResp {
+public class MemberInfoModifyResp extends ErrorResp {
 
 }
