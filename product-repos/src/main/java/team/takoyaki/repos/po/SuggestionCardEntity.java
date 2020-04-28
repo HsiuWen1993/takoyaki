@@ -29,7 +29,7 @@ private static final long serialVersionUID = 1L;
 	
 	@Column(name = "TYPE")
 	@NotNull
-	private String ip;
+	private String type;
 
 	@Column(name = "QUESTION_CONTENT")
 	@NotNull
@@ -43,7 +43,7 @@ private static final long serialVersionUID = 1L;
 	private Timestamp questionDateTime;
 	
 	@Column(name = "RESPONSE_DATETIME")
-	private Timestamp ResponseDateTime;
+	private Timestamp responseDateTime;
 	
 	@Column(name = "STATUS")
 	@NotNull
