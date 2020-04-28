@@ -13,7 +13,7 @@ public interface OrderService {
 	 * @param req
 	 * @return
 	 */
-	public OrderAddResp OrderAdd(OrderAddReq req);
+	public OrderAddResp orderAdd(OrderAddReq req);
 	
 	/**
 	 * 查詢訂單
@@ -21,7 +21,7 @@ public interface OrderService {
 	 * @param req
 	 * @return
 	 */
-	public OrderInquireResp OrderInquire(OrderInquireReq req);
+	public OrderInquireResp orderInquire(OrderInquireReq req);
 	
 	
 }

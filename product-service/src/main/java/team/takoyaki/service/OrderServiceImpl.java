@@ -17,7 +17,7 @@ public class OrderServiceImpl implements OrderService {
 	private OrderRepository repository;
 
 	@Override
-	public OrderAddResp OrderAdd(OrderAddReq req) {
+	public OrderAddResp orderAdd(OrderAddReq req) {
 		repository.save(setOrderEntity(req));
 		OrderAddResp orderAddResp = new OrderAddResp();
 		orderAddResp.setSuccess(true);
@@ -26,7 +26,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public OrderInquireResp OrderInquire(OrderInquireReq req) {
+	public OrderInquireResp orderInquire(OrderInquireReq req) {
 		// TODO Auto-generated method stub
 		return null;
 	}

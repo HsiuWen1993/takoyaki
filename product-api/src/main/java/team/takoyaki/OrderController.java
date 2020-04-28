@@ -20,12 +20,12 @@ public class OrderController {
 	
 	@PostMapping(path = "/add")
 	public OrderAddResp orderAdd(@RequestBody OrderAddReq req) {
-		return orderService.OrderAdd(req);
+		return orderService.orderAdd(req);
 	}
 	
 	@PostMapping(path ="/inquire")
 	public OrderInquireResp orderInquire(OrderInquireReq req) {
-		return orderService.OrderInquire(req);
+		return orderService.orderInquire(req);
 	}
 	
 }
