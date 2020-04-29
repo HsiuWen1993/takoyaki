@@ -1,5 +1,8 @@
 package team.takoyaki.service;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,7 +48,7 @@ public class OrderServiceImpl implements OrderService {
 		orderEntity.setMemberUid(req.getMemberUid());
 		orderEntity.setTotal(req.getTotal());
 		orderEntity.setAmount(req.getAmount());
-		orderEntity.setOrderTime(req.getOrderTime());
+		orderEntity.setOrderTime(Timestamp.valueOf(LocalDateTime.now()));
 		orderEntity.setStatus('0');
 		return orderEntity;
 	}	

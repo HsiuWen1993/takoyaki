@@ -22,6 +22,6 @@ public interface OrderService {
 	 * @return
 	 */
 	public OrderInquireResp orderInquire(OrderInquireReq req);
-	
-	
+
+
 }
