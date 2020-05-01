@@ -11,12 +11,12 @@ import team.takoyaki.repos.po.OrderEntity;
 
 public interface OrderRepository extends JpaRepository<OrderEntity, Long>  {
 
-	@Query(value = "select ORDER_UID, AMOUNT, TOTAL, STATUS from TAKOYAKI_ORDER where ORDER_UID =?")
-	OrderEntity findByOrderUid(Long OrderUid);
+	@Query(value = "select orderUid, amount, total, status from OrderEntity where orderUid = ?1")
+	OrderEntity findByOrderUid(Long orderUid);
 	
-	//@Query("select MEMBER_UID, AMOUNT, TOTAL, STATUS from TAKOYAKI_ORDER where MEMBER_UID =?1, nativeQuery = true")
-	//List<OrderEntity> findByMemberUid(Long MemberUid);
+	@Query(value = "select memberUid, amount, total, status from OrderEntity where memberUid = ?1")
+	List<OrderEntity> findByMemberUid(Long memberUid);
 	
-	//@Query("select ORDER_TIME, AMOUNT, TOTAL, STATUS from TAKOYAKI_ORDER where ORDER_TIME between =?1 and =?2")
-	//List<OrderEntity> findByOrderTime(Timestamp date1,Timestamp date2);
+	@Query(value = "select orderTime, amount, total, status from OrderEntity where orderTime between ?1 and ?2")
+	List<OrderEntity> findByOrderTime(Timestamp date1,Timestamp date2);
 }
