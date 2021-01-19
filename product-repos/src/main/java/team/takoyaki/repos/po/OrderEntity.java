@@ -48,4 +48,64 @@ public class OrderEntity implements Serializable{
 	@NotNull
 	private Character status;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getOrderUid() {
+		return orderUid;
+	}
+
+	public void setOrderUid(Long orderUid) {
+		this.orderUid = orderUid;
+	}
+
+	public Long getMemberUid() {
+		return memberUid;
+	}
+
+	public void setMemberUid(Long memberUid) {
+		this.memberUid = memberUid;
+	}
+
+	public BigDecimal getTotal() {
+		return total;
+	}
+
+	public void setTotal(BigDecimal total) {
+		this.total = total;
+	}
+
+	public Integer getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+	}
+
+	public Timestamp getOrderTime() {
+		return orderTime;
+	}
+
+	public void setOrderTime(Timestamp orderTime) {
+		this.orderTime = orderTime;
+	}
+
+	public Character getStatus() {
+		return status;
+	}
+
+	public void setStatus(Character status) {
+		this.status = status;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 }
